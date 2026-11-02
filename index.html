@@ -104,9 +104,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
 
 /* REALIDADE */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;margin-top:50px;background:var(--g5);border:2px solid var(--g5)}
-.stat{background:var(--ink);padding:30px 26px}
+.stat{display:flex;flex-direction:column;background:var(--ink);padding:30px 26px;transition:.25s}
+.stat:hover,.stat:focus-visible{background:var(--red-5)}
+.stat:focus-visible{outline:2px solid var(--red-2);outline-offset:-2px}
 .stat b{display:block;font-family:'Archivo Black';font-size:clamp(46px,6vw,72px);color:var(--red-2);line-height:1}
 .stat span{display:block;margin-top:12px;color:var(--g1);font-size:15px}
+.stat small{margin-top:auto;padding-top:18px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--g2);transition:.25s}
+.stat:hover small,.stat:focus-visible small{color:var(--white)}
 .src{margin-top:18px;font-size:12px;color:var(--g2)}
 /* COMPROMISSOS */
 .pledge{background:var(--red-5);border-block:2px solid var(--red)}
@@ -196,12 +200,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
     <h2 class="display reveal">Talento sobra.<br>Estrutura falta.</h2>
     <p class="sub reveal">O problema quase nunca é o som, é o que existe em volta dele.</p>
     <div class="stats">
-      <div class="stat reveal"><b>6 em 10</b><span>artistas de hip hop ouvidos numa pesquisa de 2025 não vivem só da arte.</span></div>
-      <div class="stat reveal"><b>1 em 3</b><span>dos artistas ouvidos na mesma pesquisa pensa em se mudar para o eixo Rio–SP pra crescer.</span></div>
-      <div class="stat reveal"><b>1.000</b><span>streams em 12 meses: abaixo disso, a faixa não gera royalties de gravação no Spotify (regra em vigor desde abril de 2024).</span></div>
-      <div class="stat reveal"><b>4 sem.</b><span>de antecedência é o mínimo que a distribuidora iMusician recomenda para enviar um lançamento.</span></div>
+      <a class="stat reveal" href="https://almapreta.com.br/sessao/cultura/maioria-dos-artistas-do-hip-hop-ja-sofreram-preconceito-e-nao-conseguem-viver-apenas-da-arte/#:~:text=60%25%20n%C3%A3o%20conseguem%20viver%20exclusivamente" target="_blank" rel="noopener"><b>6 em 10</b><span>artistas de hip hop ouvidos numa pesquisa de 2025 não vivem só da arte.</span><small>Ver fonte ↗</small></a>
+      <a class="stat reveal" href="https://almapreta.com.br/sessao/cultura/maioria-dos-artistas-do-hip-hop-ja-sofreram-preconceito-e-nao-conseguem-viver-apenas-da-arte/#:~:text=um%20em%20cada%20tr%C3%AAs%20artistas" target="_blank" rel="noopener"><b>1 em 3</b><span>dos artistas ouvidos na mesma pesquisa pensa em se mudar para o eixo Rio–SP pra crescer.</span><small>Ver fonte ↗</small></a>
+      <a class="stat reveal" href="https://artists.spotify.com/en/blog/modernizing-our-royalty-system#:~:text=at%20least%201%2C000%20streams" target="_blank" rel="noopener"><b>1.000</b><span>streams em 12 meses: abaixo disso, a faixa não gera royalties de gravação no Spotify (regra em vigor desde abril de 2024).</span><small>Ver fonte ↗</small></a>
+      <a class="stat reveal" href="https://imusician.pro/pt/recursos/blog/quanto-custa-lancar-um-single-em-2026#:~:text=pelo%20menos%204%20a%206%20semanas" target="_blank" rel="noopener"><b>4 sem.</b><span>de antecedência é o mínimo que a distribuidora iMusician recomenda para planejar um lançamento.</span><small>Ver fonte ↗</small></a>
     </div>
-    <p class="src">Fontes: "Os Bastidores do Hip Hop" (2ª edição, 2025, Dinastia Sabah; questionário online com artistas de 15 estados, via Alma Preta e Sopa Cultural); Spotify, regra de royalties (Music Business Worldwide, 2024); iMusician, página de suporte sobre prazo de lançamento.</p>
+    <p class="src">Fontes: "Os Bastidores do Hip Hop" (2ª edição, 2025, Dinastia Sabah; questionário online com artistas de 15 estados, via Alma Preta e Sopa Cultural); Spotify for Artists, "Modernizing Our Royalty System" (2023, em vigor desde 1º/04/2024); iMusician, blog "Quanto custa para você lançar um single em 2026?".</p>
   </div>
 </section>
 
