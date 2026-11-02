@@ -131,6 +131,44 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
 .faq p{color:var(--g1);margin-top:12px}
 .reveal{opacity:0;transform:translateY(30px);transition:.8s}
 .reveal.in{opacity:1;transform:none}
+
+/* CELULAR: texto >=16px, alvos de toque >=44-48px, sem rolagem lateral */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.marquee-clip{overflow-x:clip;position:relative;z-index:3}
+img,svg,video{max-width:100%}
+h1,h2,h3,p,summary,a{overflow-wrap:break-word}
+@media(max-width:760px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 40px)}
+  section{padding:72px 0}
+  nav .wrap{padding:8px 0}
+  .brand{font-size:16px;min-height:48px;gap:10px}
+  .tag{font-size:16px;letter-spacing:.1em;padding:10px 14px}
+  .eyebrow{font-size:16px;letter-spacing:.18em}
+  .hero{padding:104px 0 64px}
+  .hero p.lead,.sub{font-size:18px}
+  .cta-row{flex-direction:column;align-items:stretch}
+  .btn{min-height:48px;justify-content:center;font-size:16px;padding:14px 20px;text-align:center}
+  .marquee div{font-size:22px}
+  .card{min-height:0}
+  .card h3{margin-top:32px}
+  .card .n{font-size:16px}
+  .card p,.stat span,.pledges p,.step p,.checklist ul,.faq p{font-size:16px}
+  .stat small{font-size:16px;letter-spacing:.1em;min-height:44px;display:flex;align-items:center;padding-top:12px}
+  .src{font-size:16px;line-height:1.5}
+  .manifesto p{font-size:18px}
+  .checklist li{padding:4px 0}
+  .faq summary{font-size:18px;min-height:48px;align-items:center;padding:8px 0}
+  .faq summary::after{min-width:44px;text-align:center;font-size:28px}
+  footer{font-size:16px}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+  .final .sub{font-size:18px}
+}
+@media(max-width:380px){
+  .wrap{width:calc(100% - 32px)}
+  .hero h1{font-size:clamp(44px,13.5vw,60px)}
+  .btn{letter-spacing:.03em}
+}
 </style>
 </head>
 <body>
@@ -187,11 +225,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
   </div>
 </header>
 
+<div class="marquee-clip">
 <div class="marquee" aria-hidden="true">
   <div>
     <span>Batalha de rima</span><span>Shows</span><span>Lançamentos</span><span>Clipes</span><span>Divulgação</span><span>Identidade visual</span>
     <span>Batalha de rima</span><span>Shows</span><span>Lançamentos</span><span>Clipes</span><span>Divulgação</span><span>Identidade visual</span>
   </div>
+</div>
 </div>
 
 <section id="cena" style="padding-bottom:30px">
