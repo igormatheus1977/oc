@@ -169,6 +169,21 @@ h1,h2,h3,p,summary,a{overflow-wrap:break-word}
   .hero h1{font-size:clamp(44px,13.5vw,60px)}
   .btn{letter-spacing:.03em}
 }
+
+/* MENU HAMBURGUER (so celular) */
+.burger,.menu{display:none}
+@media(max-width:760px){
+  .burger{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;width:48px;height:48px;background:none;border:0;color:var(--white);cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .burger span{display:block;width:26px;height:3px;background:currentColor;transition:transform .25s,opacity .2s}
+  body.menu-open .burger span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+  body.menu-open .burger span:nth-child(2){opacity:0}
+  body.menu-open .burger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+  .menu{display:flex;flex-direction:column;justify-content:center;position:fixed;inset:0;z-index:49;background:rgba(13,13,13,.97);padding:88px 24px 32px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;overflow-y:auto}
+  body.menu-open .menu{opacity:1;visibility:visible}
+  body.menu-open{overflow:hidden}
+  .menu a{display:flex;align-items:center;min-height:64px;font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:26px;letter-spacing:-.01em;border-bottom:1px solid var(--g5)}
+  .menu a:active{color:var(--red-2)}
+}
 </style>
 </head>
 <body>
@@ -202,8 +217,17 @@ h1,h2,h3,p,summary,a{overflow-wrap:break-word}
       <li><a href="#como">Como funciona</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
+    <button class="burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <a href="#cena">A cena</a>
+  <a href="#apoio">Apoio</a>
+  <a href="#manifesto">Manifesto</a>
+  <a href="#como">Como funciona</a>
+  <a href="#contato">Contato</a>
+</div>
 
 <header class="hero" id="top">
   <svg class="bigstar" style="color:var(--red-3)" viewBox="0 0 100 100"><use href="#ast"/></svg>
@@ -348,6 +372,18 @@ h1,h2,h3,p,summary,a{overflow-wrap:break-word}
 <script>
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const burger = document.querySelector('.burger'), menu = document.getElementById('menu');
+function setMenu(open) {
+  document.body.classList.toggle('menu-open', open);
+  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  menu.setAttribute('aria-hidden', !open);
+}
+burger.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+matchMedia('(min-width:761px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 </script>
 </body>
 </html>
