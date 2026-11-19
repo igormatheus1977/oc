@@ -50,7 +50,8 @@ nav ul a:hover{color:var(--red-2)}
 @keyframes spin{to{transform:translateY(-50%) rotate(360deg)}}
 .hero .wrap{position:relative;z-index:2}
 .tag{display:inline-block;border:1px solid var(--g3);padding:6px 14px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--g1);margin-bottom:28px}
-.hero h1{font-size:clamp(52px,11vw,150px)}
+.hero h1{font-size:clamp(52px,9.5vw,124px)}
+@media(max-width:760px){.hero h1{font-size:min(12vw,84px)}}
 .hero h1 em{font-style:normal;color:var(--red-2);-webkit-text-stroke:0}
 .hero .script{display:block;font-size:clamp(44px,8vw,96px);margin:-6px 0 10px -4px;transform:rotate(-3deg)}
 .hero p.lead{max-width:520px;font-size:18px;color:var(--g1);margin:26px 0 38px}
@@ -174,7 +175,7 @@ h1,h2,h3,p,summary,a{overflow-wrap:break-word}
 }
 @media(max-width:380px){
   .wrap{width:calc(100% - 32px)}
-  .hero h1{font-size:clamp(44px,13.5vw,60px)}
+  .hero h1{font-size:12vw}
   .btn{letter-spacing:.03em}
 }
 
@@ -242,9 +243,9 @@ h1,h2,h3,p,summary,a{overflow-wrap:break-word}
   <svg class="bigstar" style="color:var(--red-3)" viewBox="0 0 100 100"><use href="#ast"/></svg>
   <div class="wrap">
     <span class="tag">✱ Patrocínio para o underground</span>
-    <h1 class="display">Seu som<br>merece <em>sair</em><br>do porão.</h1>
+    <h1 class="display">O MC<br>merece <em>mais</em><br>que o<br>porão.</h1>
     <span class="script">a rua é o palco</span>
-    <p class="lead">A OC (Opium Company) apoia artistas que ainda não têm holofote: batalha de rima, show, lançamento, o que você precisar. A gente entra pra construir contigo.</p>
+    <p class="lead">A OC (Opium Company) apoia artistas que ainda não têm holofote: batalha de rima, show, lançamento ou o que o seu corre pedir. A gente entra pra construir com você.</p>
     <div class="cta-row">
       <a class="btn" href="https://wa.me/5581999999999?text=Oi!%20Sou%20artista%20e%20quero%20saber%20mais%20sobre%20o%20patroc%C3%ADnio%20da%20OC%20Company." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600-.4.400c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.200 1.300 2.500 1.500.3.100.5.100.7-.1l1-1.200c.2-.3.400-.2.600-.1l2 1c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/></svg>
@@ -285,8 +286,8 @@ h1,h2,h3,p,summary,a{overflow-wrap:break-word}
 <section id="apoio">
   <div class="wrap">
     <p class="eyebrow reveal">O que a gente apoia</p>
-    <h2 class="display reveal">Tu escolhe<br>o caminho.</h2>
-    <p class="sub reveal">Cada artista tem um corre diferente. O apoio é montado em cima do que faz sentido pra você, não o contrário.</p>
+    <h2 class="display reveal">Você escolhe<br>o caminho.</h2>
+    <p class="sub reveal">Cada artista tem o seu corre. A gente monta o apoio em cima do que faz sentido pra você, e não o contrário.</p>
 
     <div class="grid">
       <article class="card reveal"><svg class="st" style="color:var(--red-2)"><use href="#ast"/></svg><span class="n">01</span><h3>Batalhas de rima</h3><p>Prêmio e ajuda de custo pros MCs, som, cobertura em vídeo e divulgação. Pra roda render mais que aplauso.</p></article>
